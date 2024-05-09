@@ -25,7 +25,7 @@
             }
 
             if (operator === "+") {
-                var result = sum(parseFloat(operand1), parseFloat(operand2), decimals);
+                var result = sum(parseFloat(operand1), parseFloat(operand2), decimals, true);
                 console.log("Result:", result);
             }
             // Implement your logic here to perform calculations based on the input values
@@ -36,11 +36,14 @@
             console.log("Operator:", operator);
         }
 
-        function sum(a, b, decimals) {
-            var result = a + b;
-            var roundedResult = Number(result.toFixed(decimals));
-            console.log("Rounded Result:", roundedResult);
-            return roundedResult;
+        function sum(a, b, decimals, absoluteValue) {
+                var result = a + b;
+                if (absoluteValue) {
+                    result = Math.abs(result);
+                }
+                var roundedResult = Number(result.toFixed(decimals));
+                console.log("Rounded Result:", roundedResult);
+                return roundedResult;
         }
 
         function subtract(operand1, operand2) {
