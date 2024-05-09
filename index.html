@@ -24,7 +24,7 @@
             }
 
             if (operator === "+") {
-                var result = sum(parseFloat(operand1), parseFloat(operand2));
+                var result = sum(parseFloat(operand1), parseFloat(operand2), true);
                 console.log("Result:", result);
             }
             // Implement your logic here to perform calculations based on the input values
@@ -34,9 +34,13 @@
             console.log("Operand 2:", operand2);
             console.log("Operator:", operator);
         }
-
-        function sum(a, b) {
-            return a + b;
+        function sum(a, b, absoluteValue) {
+            var result = a + b;
+            if (absoluteValue) {
+                result = Math.abs(result);
+            }
+            console.log("Result:", result);
+            return result;
         }
 
         function subtract(operand1, operand2) {
