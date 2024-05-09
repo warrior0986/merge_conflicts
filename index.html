@@ -19,6 +19,10 @@
             var operand2 = document.getElementById("operand2").value;
             var operator = document.getElementById("operator").value;
 
+            if (operator === '-') {
+                subtract(operand1, operand2);
+            }
+
             if (operator === "+") {
                 var result = sum(parseFloat(operand1), parseFloat(operand2));
                 console.log("Result:", result);
@@ -33,6 +37,11 @@
 
         function sum(a, b) {
             return a + b;
+        }
+
+        function subtract(operand1, operand2) {
+            var result = operand1 - operand2;
+            console.log("Result:", result);
         }
     </script>
 </body>
