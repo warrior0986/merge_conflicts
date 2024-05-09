@@ -19,12 +19,21 @@
             var operand2 = document.getElementById("operand2").value;
             var operator = document.getElementById("operator").value;
 
+            if (operator === '-') {
+                subtract(operand1, operand2);
+            }
+
             // Implement your logic here to perform calculations based on the input values
 
             // For now, let's just log the input values
             console.log("Operand 1:", operand1);
             console.log("Operand 2:", operand2);
             console.log("Operator:", operator);
+        }
+
+        function subtract(operand1, operand2) {
+            var result = operand1 - operand2;
+            console.log("Result:", result);
         }
     </script>
 </body>
